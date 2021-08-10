@@ -1,0 +1,14 @@
+.wrapper {
+  position: absolute;
+  background: var(--main);
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.logo {
+  font-family: Geograph;
+  font-weight: bold;
+}

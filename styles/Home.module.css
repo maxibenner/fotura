@@ -1,0 +1,49 @@
+.container {
+  overflow: hidden;
+}
+.main {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+  max-width: 1000px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+.main > div {
+  min-height: 100vh;
+  display: flex;
+  /* overflow: hidden; */
+}
+.main > div:first-child {
+  flex-direction: column;
+  justify-content: center;
+}
+.main > div:last-child {
+  margin: 40px 0 -40px 0;
+
+}
+.main h1 {
+  font-family: Domaine Display;
+  font-weight: normal;
+  font-size: 3rem;
+  max-width: 350px;
+}
+
+@media (max-width: 800px) {
+  .main {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
+  }
+  .main > div {
+    min-height: 90vh;
+    height: fit-content;
+  }
+  .main > div:last-child {
+    padding: 0 0 0px 0;
+    margin: -50px 0 0 0;
+  }
+}
+.footer {
+}

@@ -1,0 +1,42 @@
+/* Give a Meal */
+.giveAMeal {
+  background: #9de6a6;
+  background-image: url("/images/salad.svg");
+  background-repeat: no-repeat;
+  background-size: 230%;
+  background-position: 60% 300%;
+}
+.giveAMeal > div > div h2 {
+  font-family: Recoleta;
+}
+/* Teeshot */
+.teeshot {
+  background: pink;
+  background-image: url("/videos/teeshot.mp4");
+  background-size: 50%;
+  background-position: center 95%;
+}
+.teeshot > div > div {
+  background: #f0c5cec0;
+}
+/* Cardboard */
+.cardboard {
+  background-image: url("/images/cardboard.jpg");
+  background-size: 130%;
+  background-repeat: no-repeat;
+  background-position: 30% 100%;
+}
+.cardboard h2 {
+  /* font-family: recoleta; */
+}
+.cardboard > div > div {
+  background: #ffffff;
+  margin: auto 8px 8px 8px;
+  border-radius: 25px;
+  padding-top: 32px;
+}
+/* Club */
+.club {
+  background-image: url("/images/club.jpg");
+  background-size: 100%;
+}

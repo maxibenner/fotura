@@ -1,0 +1,50 @@
+.wrapper {
+  position: absolute;
+  width: 300px;
+  max-width: calc(100vw - 32px);
+  height: 450px;
+  background: white;
+  border-radius: 32px;
+  box-shadow: 0 0 0 5px white, 0 5px 10px rgba(0, 0, 0, 0.05),
+    0 7px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  cursor: grab;
+
+  user-select: none;
+}
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+}
+.body {
+  width: 100%;
+  padding: 0 48px 48px 48px;
+  margin: auto 0 0 0;
+  font-family: Geograph;
+}
+.body h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+.link {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+}
+.link > h3 {
+  margin: 5px 0 0 0;
+}
+.link > h3:last-child {
+  transition: 0.3s;
+}
+/* .link:hover .link > h3:last-child {
+  transform: translateX(5px);
+} */
+.link > h3:first-child {
+  margin-right: 5px;
+}

@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+  /* background: lightblue; */
+  /* box-shadow: 0 0 0 1px black; */
+  /* height: 100%; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card_container {
+  z-index: 1;
+  touch-action: none;
+  position: relative;
+  width: 300px;
+  height: 450px;
+  max-width: calc(100vw - 32px);
+  z-index: 999;
+}
+.promt {
+  z-index: 0;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+.promt > div {
+  font-size: 1.3rem;
+  transform-origin: center 10px;
+  animation: swipe 2s ease-in-out infinite;
+}
+.promt > p {
+  margin-left: 8px;
+}
+
+@keyframes swipe {
+  0% {
+    transform: rotateZ(-15deg) translateX(0px);
+  }
+  40% {
+    transform: rotateZ(0deg) translateX(5px);
+  }
+  100% {
+    transform: rotateZ(-15deg) translateX(0px);
+  }
+}
