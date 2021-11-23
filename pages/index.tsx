@@ -4,6 +4,8 @@ import { Nav } from "../components/nav/Nav";
 import { CardStack } from "../components/cardStack/CardStack";
 
 export default function Home() {
+  // const value = useContext(MyContext);
+
   return (
     <div className={styles.container}>
       <Head>

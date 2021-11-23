@@ -56,9 +56,8 @@ export const CardStack = () => {
   const bindCardPos = useDrag(
     ({
       args: [index],
-      movement: [mx, my],
+      movement: [mx],
       direction: [dx],
-      offset,
       down,
       velocity,
     }) => {
