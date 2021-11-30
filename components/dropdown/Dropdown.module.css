@@ -45,6 +45,8 @@
 }
 .icon {
   font-size: 1.5rem;
+  height: 35px;
+  width: 35px;
 }
 .icon_text {
   margin: 0;
