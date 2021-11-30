@@ -2,9 +2,11 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Nav } from "../components/nav/Nav";
 import { CardStack } from "../components/cardStack/CardStack";
+import { useContext } from "react";
+import { I18nContext } from "../context/i18n";
 
 export default function Home() {
-  // const value = useContext(MyContext);
+  const { i18nText } = useContext(I18nContext);
 
   return (
     <div className={styles.container}>
@@ -16,10 +18,8 @@ export default function Home() {
       <Nav />
       <main className={styles.main}>
         <div>
-          <h1>
-            We are a curiosity driven <b>product studio</b>
-          </h1>
-          <a href="mailto:benner@fotura.co">Contact &rarr;</a>
+          <h1>{i18nText(1)}</h1>
+          <a href="mailto:benner@fotura.co">{i18nText(3)} &rarr;</a>
         </div>
         <div>
           <CardStack />

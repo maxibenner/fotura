@@ -1,12 +1,12 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-// import { LanguageContext } from "../contexts/language";
+import { I18nContextWrapper } from "../context/i18n";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    // <LanguageContext.Provider value="en">
+    <I18nContextWrapper>
       <Component {...pageProps} />
-    // </LanguageContext.Provider>
+    </I18nContextWrapper>
   );
 }
 export default MyApp;

@@ -1,49 +1,63 @@
 import { Card } from "../card/Card";
 import s from "./CustomCards.module.css";
+import { useContext, useEffect, useState } from "react";
+import { I18nContext } from "../../context/i18n";
 
 export const GiveAMeal = ({ ...props }) => {
+  const { i18nText } = useContext(I18nContext);
+
   return (
     <Card
       {...props}
+      linkText={i18nText(8)}
       className={s.giveAMeal}
       title="Give a Meal"
-      body="A technology enabled, decentralised food pantry."
+      body={i18nText(4)}
       href="https://www.give-a-meal.org"
     />
   );
 };
 
 export const Teeshot = ({ ...props }) => {
+  const { i18nText } = useContext(I18nContext);
+
   return (
     <Card
       {...props}
+      linkText={i18nText(8)}
       className={s.teeshot}
       title="Teeshot"
-      body="CG t-shirt animations for POD sellers."
+      body={i18nText(5)}
       href="https://www.teeshot.fotura.co"
     />
   );
 };
 
 export const Cardboard = ({ ...props }) => {
+  const { i18nText } = useContext(I18nContext);
+
   return (
     <Card
       {...props}
+      linkText={i18nText(8)}
       className={s.cardboard}
       title="Cardboard"
-      body="Simple cloud storage for analog memories."
+      body={i18nText(6)}
       href="https://www.cardboard.fotura.co"
     />
   );
 };
 
 export const Club = ({ ...props }) => {
+  const { i18nText } = useContext(I18nContext);
+
   return (
     <Card
       {...props}
+      linkText={i18nText(8)}
       className={s.club}
       title="Club"
-      body="Voice-first platform for communities that stick together."
+      body={i18nText(7)}
       href="https://www.club.fotura.co"
     />
   );

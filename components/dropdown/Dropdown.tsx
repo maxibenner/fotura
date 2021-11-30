@@ -10,9 +10,29 @@ import { useEffect } from "react";
  * @param
  * @returns
  */
-export const Dropdown = ({ children }: { children: React.ReactNode[] }) => {
+export const Dropdown = ({
+  children,
+  activeIdentifier,
+}: {
+  children: React.ReactNode[];
+  activeIdentifier: string;
+}) => {
   const [isActive, setIsActive] = useState(false);
   const [activeItem, setActiveItem] = useState(children[0]); // Default is first child
+
+  useEffect(() => {
+    if (children) {
+      const item = children.filter((item: any) => {
+        if (activeIdentifier === item.props.identifier) {
+          return item;
+        }
+      });
+
+      if (item) {
+        setActiveItem(item[0]);
+      }
+    }
+  }, [activeIdentifier]);
 
   // Open / close dropdown
   const toggleDropdown = () => setIsActive((prev) => !prev);
@@ -32,21 +52,9 @@ export const Dropdown = ({ children }: { children: React.ReactNode[] }) => {
     };
   }, [isActive]);
 
-  // Map onClick prop to all children
-  const childrenWithProps = React.Children.map(children, (child) => {
-    // Check isValidElement to play it safe and also avoid typescript error
-    if (React.isValidElement(child)) {
-      // Return augmented child
-      return React.cloneElement(child, {
-        onClick: () => setActiveItem(child),
-      });
-    }
-    return child;
-  });
-
   return (
-    <div className={s.dropdown_container} onClick={toggleDropdown}>
-      <div className={s.dropdown_header}>
+    <div className={s.dropdown_container}>
+      <div className={s.dropdown_header} onClick={toggleDropdown}>
         <div className={s.pointer_blocker}>
           {React.isValidElement(activeItem) &&
             getIconElement(activeItem.props.icon)}
@@ -59,7 +67,7 @@ export const Dropdown = ({ children }: { children: React.ReactNode[] }) => {
         </div>
       </div>
       {/* Menu */}
-      {isActive && <div className={s.dropdown_menu}>{childrenWithProps}</div>}
+      {isActive && <div className={s.dropdown_menu}>{children}</div>}
     </div>
   );
 };
@@ -74,11 +82,13 @@ export const Dropdown = ({ children }: { children: React.ReactNode[] }) => {
 export const Item = ({
   text,
   icon,
+  identifier,
   onClick,
 }: {
   text?: string;
   icon?: string | JSX.Element | undefined;
-  onClick?: any;
+  identifier?: string;
+  onClick: any;
 }) => {
   return (
     <div className={s.icon_container} onClick={onClick}>

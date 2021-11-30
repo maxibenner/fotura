@@ -1,26 +1,38 @@
-// import React, { createContext, useContext, useMemo, useCallback } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
-// const I18nContext = createContext("en");
+import { langDe } from "../public/locales/de";
+import { langEn } from "../public/locales/en";
 
-// const useI18nContext = () => useContext(I18nContext);
+export const I18nContext = createContext<any>(undefined);
 
-// // The messages are passed to the Provider
-// const I18nProvider: React.FC<any> = ({ children, locale, messages }) => {
-//   // The user needs to only pass the messageKey
-//   const getMessage = useCallback(
-//     (messageKey: string) => {
-//       return messages[locale][messageKey];
-//     },
-//     [locale, messages]
-//   );
+export const I18nContextWrapper = ({ children }: { children: JSX.Element }) => {
+  const [locale, setLocale] = useState<string | null>(null);
 
-//   const value = useMemo(
-//     () => ({
-//       locale,
-//       getMessage,
-//     }),
-//     [locale, getMessage]
-//   );
+  // Set user location
+  useEffect(() => {
+    fetch("https://api.ipregistry.co/?key=9mbbr52gsds5xtyb")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (payload) {
+        setLocale(payload.location.country.code);
+      });
+  }, []);
 
-//   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
-// };
+  const i18nText = (key: number) => {
+    const keyString = JSON.stringify(key);
+    if (locale) {
+      if (locale === "DE") {
+        return langDe[keyString];
+      } else {
+        return langEn[keyString];
+      }
+    } else return "";
+  };
+
+  return (
+    <I18nContext.Provider value={{ setLocale, i18nText, locale }}>
+      {children}
+    </I18nContext.Provider>
+  );
+};

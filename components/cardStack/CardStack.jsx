@@ -1,16 +1,20 @@
 import { animated, useSprings } from "@react-spring/web";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDrag } from "react-use-gesture";
 import {
   Cardboard,
-  Club, GiveAMeal,
-  Teeshot
+  Club,
+  GiveAMeal,
+  Teeshot,
 } from "../customCards/CustomCards";
 import s from "./CardStack.module.css";
-const cards = require("../../cards.json");
+import { useContext } from "react";
+import { I18nContext } from "../../context/i18n";
 
 export const CardStack = () => {
+  const { i18nText } = useContext(I18nContext);
+
   // Utility function
   const wobble = (input) => {
     const randomModifier = Math.random() + 1;
@@ -54,13 +58,7 @@ export const CardStack = () => {
 
   // Update spring on drag
   const bindCardPos = useDrag(
-    ({
-      args: [index],
-      movement: [mx],
-      direction: [dx],
-      down,
-      velocity,
-    }) => {
+    ({ args: [index], movement: [mx], direction: [dx], down, velocity }) => {
       // Track velocity
       const trigger = velocity > 0.2;
 
@@ -108,7 +106,7 @@ export const CardStack = () => {
       </div>
       <div className={s.promt}>
         <Image src="/icons/hand.svg" width="20px" height="20px" />
-        <p>Flick to explore</p>
+        <p>{i18nText(2)}</p>
       </div>
     </div>
   );

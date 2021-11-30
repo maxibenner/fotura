@@ -7,6 +7,7 @@ export const Card = ({
   imgSrc,
   children,
   className,
+  linkText,
   href,
   ...props
 }) => {
@@ -24,7 +25,7 @@ export const Card = ({
             href={href}
             target="_empty"
           >
-            <h3>Visit</h3>
+            <h3>{linkText}</h3>
             <h3
               style={{
                 transform: isHovered ? "translateX(5px)" : "translateX(0)",
