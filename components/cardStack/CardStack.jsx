@@ -105,7 +105,7 @@ export const CardStack = () => {
         ))}
       </div>
       <div className={s.promt}>
-        <Image src="/icons/hand.svg" width="20px" height="20px" />
+        <Image src="/icons/hand.svg" width="20px" height="20px" alt="swipe indicator" />
         <p>{i18nText(2)}</p>
       </div>
     </div>
