@@ -25,6 +25,7 @@
   background: white;
 }
 .pointer_blocker {
+  display: flex;
   pointer-events: none;
   font-size: 1.5rem;
 }
