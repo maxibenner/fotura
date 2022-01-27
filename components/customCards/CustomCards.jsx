@@ -2,6 +2,7 @@ import { Card } from "../card/Card";
 import s from "./CustomCards.module.css";
 import { useContext, useEffect, useState } from "react";
 import { I18nContext } from "../../context/i18n";
+import { ContactComputerCard } from "../contactComputerCard/ContactComputerCard";
 
 export const GiveAMeal = ({ ...props }) => {
   const { i18nText } = useContext(I18nContext);
@@ -14,6 +15,21 @@ export const GiveAMeal = ({ ...props }) => {
       title="Give a Meal"
       body={i18nText(4)}
       href="https://www.give-a-meal.org"
+    />
+  );
+};
+
+export const ContactComputer = ({ ...props }) => {
+  const { i18nText } = useContext(I18nContext);
+
+  return (
+    <ContactComputerCard
+      {...props}
+      linkText={i18nText(8)}
+      className={s.contactComputer}
+      title="Contact Computer"
+      body={i18nText(9)}
+      href="https://www.contact.computer"
     />
   );
 };

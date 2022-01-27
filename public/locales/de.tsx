@@ -11,4 +11,7 @@ export const langDe = {
   6: "Simpler Cloud Speicher für Familienvideos.",
   7: "Sprachfokussierte Platform für langanhaltende Gemeinschaften.",
   8: "Website",
+  9: "Globales Addressbuch mit stets aktuellen Daten.",
+  10: "Hallo!",
+  11: "Ich helfe dir dabei deine Kontakte zu organisieren."
 } as any;

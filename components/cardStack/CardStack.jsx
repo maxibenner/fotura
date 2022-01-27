@@ -5,6 +5,7 @@ import { useDrag } from "react-use-gesture";
 import {
   Cardboard,
   Club,
+  ContactComputer,
   GiveAMeal,
   Teeshot,
 } from "../customCards/CustomCards";
@@ -24,6 +25,7 @@ export const CardStack = () => {
   const [gone] = useState(() => new Set());
 
   const AnimatedGiveAMeal = animated(GiveAMeal);
+  const AnimatedContactComputer = animated(ContactComputer);
   const AnimatedTeeshot = animated(Teeshot);
   const AnimatedCardboard = animated(Cardboard);
   const AnimatedClub = animated(Club);
@@ -32,6 +34,7 @@ export const CardStack = () => {
     AnimatedClub,
     AnimatedCardboard,
     AnimatedTeeshot,
+    AnimatedContactComputer,
     AnimatedGiveAMeal,
   ];
 
@@ -105,7 +108,12 @@ export const CardStack = () => {
         ))}
       </div>
       <div className={s.promt}>
-        <Image src="/icons/hand.svg" width="20px" height="20px" alt="swipe indicator" />
+        <Image
+          src="/icons/hand.svg"
+          width="20px"
+          height="20px"
+          alt="swipe indicator"
+        />
         <p>{i18nText(2)}</p>
       </div>
     </div>

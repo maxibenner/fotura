@@ -14,6 +14,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/nav/Nav.js", "components/cardStack/Cards.jsx.jsxcomponents/cardStack/Cards.jsxtack.jsx", "context/i18n.js", "context/i18n.jsx", "context/i18n.jsx", "public/locales/de.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/nav/Nav.js", "components/cardStack/Cards.jsx.jsxcomponents/cardStack/Cards.jsxtack.jsx", "context/i18n.js", "context/i18n.jsx", "context/i18n.jsx", "public/locales/de.jsx", "components/contactComputerCard/ContactComputerCard.jsx"],
   "exclude": ["node_modules"]
 }
