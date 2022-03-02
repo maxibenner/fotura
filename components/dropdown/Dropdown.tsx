@@ -18,6 +18,7 @@ export const Dropdown = ({
   children: React.ReactNode[];
   activeIdentifier: string;
 }) => {
+  console.log(activeIdentifier)
   const [isActive, setIsActive] = useState(false);
   const [activeItem, setActiveItem] = useState(children[0]); // Default is first child
 

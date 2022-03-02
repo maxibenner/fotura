@@ -15,7 +15,10 @@ export const I18nContextWrapper = ({ children }: { children: JSX.Element }) => {
         return response.json();
       })
       .then(function (payload) {
-        setLocale(payload.location.country.code);
+        const countryCode = payload.location.country.code;
+        if (countryCode != "US" || countryCode != "DE") {
+          setLocale("US");
+        } else setLocale(payload.location.country.code);
       });
   }, []);
 
