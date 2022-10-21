@@ -29,7 +29,7 @@ export const ContactComputer = ({ ...props }) => {
       className={s.contactComputer}
       title="Contact Computer"
       body={i18nText(9)}
-      href="https://www.contact.computer"
+      href="https://cc.fotura.co"
     />
   );
 };
