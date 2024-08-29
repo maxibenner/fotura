@@ -1,5 +1,4 @@
 import { animated, useSprings } from "@react-spring/web";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useDrag } from "react-use-gesture";
 import {
@@ -108,7 +107,7 @@ export const CardStack = () => {
         ))}
       </div>
       <div className={s.promt}>
-        <Image
+        <img
           src="/icons/hand.svg"
           width="20px"
           height="20px"

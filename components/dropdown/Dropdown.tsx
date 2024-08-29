@@ -3,7 +3,6 @@ import React from "react";
 import { MdArrowDropDown } from "react-icons/md";
 import { useState } from "react";
 import { useEffect } from "react";
-import Image from "next/image";
 
 /**
  * Dropdown component with active item display. Automatically adds onClick handlers to children
@@ -18,7 +17,7 @@ export const Dropdown = ({
   children: React.ReactNode[];
   activeIdentifier: string;
 }) => {
-  console.log(activeIdentifier)
+  console.log(activeIdentifier);
   const [isActive, setIsActive] = useState(false);
   const [activeItem, setActiveItem] = useState(children[0]); // Default is first child
 
@@ -117,7 +116,7 @@ const getIconElement = (icon: string | JSX.Element | undefined) => {
     if (icon.includes("/")) {
       // Create image element with url as src
       imageEl = (
-        <Image
+        <img
           width="35px"
           height="35px"
           className={s.item_img}
